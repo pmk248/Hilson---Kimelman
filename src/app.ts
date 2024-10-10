@@ -6,8 +6,10 @@ import { dbConnection } from "./config/database";
 const app = express();
 
 dotenv.config();
+
 dbConnection()
 
+app.use(express.json());
 app.use('/users', userRouter);
 
 const PORT = process.env.PORT || 3000;

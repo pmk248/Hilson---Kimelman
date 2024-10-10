@@ -2,11 +2,11 @@ import mongoose, { Document, Schema } from "mongoose"
 import { Ipost } from "./Post"
 
 export default interface Iuser extends Document {
-    username    : string;
+    username: string;
     email   : string;
     password: string;
     age     : number;
-    posts   : Ipost[];
+    posts?  : Ipost[];
 }
 
 const userSchema = new Schema<Iuser>({

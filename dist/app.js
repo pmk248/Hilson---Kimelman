@@ -10,6 +10,7 @@ const database_1 = require("./config/database");
 const app = (0, express_1.default)();
 dotenv_1.default.config();
 (0, database_1.dbConnection)();
+app.use(express_1.default.json());
 app.use('/users', userRoute_1.default);
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
